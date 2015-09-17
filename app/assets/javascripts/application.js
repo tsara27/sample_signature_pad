@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require signaturepad/flashcanvas
+//= require signaturepad/jquery.signaturepad.min
+//= require signaturepad/json2.min
