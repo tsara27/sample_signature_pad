@@ -1,0 +1,14 @@
+<h3>Hello <%= @agreement.name %></h3>
+<p>Thank you for signing the agreement. You have promised to be a great person!</p>
+<div class="sigPad sigWrapper">
+  <div class="typed"></div>
+  <canvas class="pad" width="298" height="55"></canvas>
+  <input type="hidden" name="output" class="output"/>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    sig = <%= raw @agreement.signature %>;
+    $('.sigPad').signaturePad({ displayOnly:true }).regenerate(sig);
+  });
+</script>

@@ -1,0 +1,17 @@
+<%= form_for @agreement, html: { class: "sigPad" } do |f| %>
+  Your name: <%= f.text_field :name %><br />
+  <h5>User Agreement</h5>
+  <p>By signing this agreement, you promise to be a great person.</p>
+  <div class="sig sigWrapper">
+    <div class="typed"></div>
+    <canvas class="pad" width="298" height="55"></canvas>
+    <%= f.hidden_field :signature, class: "output" %><br />
+  </div>  
+  <%= f.submit %>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.sigPad').signaturePad({ drawOnly:true });
+  });
+</script>
